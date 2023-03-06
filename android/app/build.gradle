@@ -64,6 +64,10 @@ react {
     // hermesFlags = ["-O", "-output-source-map"]
 }
 
+// the next 2 lines breaks the build
+apply from: "../../node_modules/react-native/react.gradle" // @react-native-code-push
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle" // @react-native-code-push
+
 /**
  * Set this to true to create four separate APKs instead of one,
  * one for each native architecture. This is useful if you don't
@@ -110,6 +114,8 @@ android {
         applicationId project.env.get("ANDROID_APP_ID")
         resValue "string", "app_name", project.env.get("ANDROID_APP_NAME")
         resValue "string", "build_config_package", "com.debugcodepushrn071"  // @react-native-config the last parameter correspond to the MainActivity package name
+        resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis()) // @react-native-code-push
+        resValue "string", "CodePushDeploymentKey", project.env.get("CODEPUSH_KEY_ANDROID") // @react-native-code-push
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

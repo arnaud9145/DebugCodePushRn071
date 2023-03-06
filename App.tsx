@@ -7,6 +7,7 @@
 
 import React from 'react';
 import type {PropsWithChildren} from 'react';
+import CodePush from "react-native-code-push";
 import {
   SafeAreaView,
   ScrollView,
@@ -117,4 +118,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default CodePush({
+  updateDialog: true,
+  installMode: CodePush.InstallMode.ON_NEXT_RESUME,
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+})(App);
