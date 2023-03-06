@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android --variant=uatDebug",
+    "android:uat:release": "react-native run-android --variant=uatRelease",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
