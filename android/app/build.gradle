@@ -95,7 +95,9 @@ android {
 
     namespace "com.debugcodepushrn071"
     defaultConfig {
-        applicationId "com.debugcodepushrn071"
+        applicationId project.env.get("ANDROID_APP_ID")
+        resValue "string", "app_name", project.env.get("ANDROID_APP_NAME")
+        resValue "string", "build_config_package", "com.debugcodepushrn071"  // @react-native-config the last parameter correspond to the MainActivity package name
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

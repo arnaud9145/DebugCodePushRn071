@@ -38,6 +38,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DebugCodePushRn071/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-DebugCodePushRn071-DebugCodePushRn071Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DebugCodePushRn071-DebugCodePushRn071Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-DebugCodePushRn071.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugCodePushRn071.debug.xcconfig"; path = "Target Support Files/Pods-DebugCodePushRn071/Pods-DebugCodePushRn071.debug.xcconfig"; sourceTree = "<group>"; };
+		51B4F56B29B5EB0A00286C54 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-DebugCodePushRn071.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugCodePushRn071.release.xcconfig"; path = "Target Support Files/Pods-DebugCodePushRn071/Pods-DebugCodePushRn071.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-DebugCodePushRn071-DebugCodePushRn071Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebugCodePushRn071-DebugCodePushRn071Tests.debug.xcconfig"; path = "Target Support Files/Pods-DebugCodePushRn071-DebugCodePushRn071Tests/Pods-DebugCodePushRn071-DebugCodePushRn071Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-DebugCodePushRn071.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DebugCodePushRn071.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +117,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				51B4F56B29B5EB0A00286C54 /* Config.xcconfig */,
 				13B07FAE1A68108700A75B9A /* DebugCodePushRn071 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* DebugCodePushRn071Tests */,
@@ -533,6 +535,7 @@
 		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51B4F56B29B5EB0A00286C54 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
