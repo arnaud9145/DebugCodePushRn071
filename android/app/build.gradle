@@ -1,6 +1,18 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
+
+// @react-native-config
+project.ext.envConfigFiles = [
+        localdebug: ".env.local",
+        uatdebug: ".env.uat",
+        uatrelease: ".env.uat",
+        productiondebug: ".env.production",
+        productionrelease: ".env.production",
+        "": ".env.uat", // Default (must be the last in the list so as not to override others)
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 import com.android.build.OutputFile
 
 /**
@@ -101,7 +113,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName project.env.get("VERSION")
     }
 
     splits {
@@ -130,6 +142,22 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    flavorDimensions "environment"
+    productFlavors {
+        local {
+            dimension "environment"
+        }
+        uat {
+            dimension "environment"
+        }
+        preprod {
+            dimension "environment"
+        }
+        production {
+            dimension "environment"
         }
     }
 
